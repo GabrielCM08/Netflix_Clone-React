@@ -6,6 +6,7 @@ const categories = [
     name: "trending",
     title: "Em Alta",
     path: `/trending/all/week?api_key=${API_KEY}&language=pt-BR`,
+    isLarge: true,
   },
   {
     name: "netflixOriginals",
@@ -41,7 +42,7 @@ const categories = [
 
 export const getMovies = async (path) => {
   try {
-    let url = `https://api.themoviedb.org/3/${path}`;
+    let url = `https://api.themoviedb.org/3${path}`;
     const response = await fetch(url);
     return await response.json();
   } catch (error) {
