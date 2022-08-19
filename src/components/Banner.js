@@ -23,7 +23,7 @@ function Banner() {
   }, []);
 
   function truncate(str, n) {
-    return str?.length > n ? str.subtr(0, n - 1) + "..." : str;
+    return str?.length > n ? str.substring(0, n - 1) + "..." : str;
   }
 
   return (
@@ -46,7 +46,7 @@ function Banner() {
         </div>
 
         <div className="banner-description">
-          <h2>{truncate(movie?.overview)}</h2>
+          <h3>{truncate(movie?.overview, 150)}</h3>
         </div>
       </div>
     </header>
